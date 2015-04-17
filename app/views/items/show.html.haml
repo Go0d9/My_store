@@ -1,0 +1,13 @@
+
+%h1= @item.name 
+%ul
+  %li Цена: #{@item.price} руб.
+  %li Описание: #{urls_to_links(urls_to_images(@item.description))}
+  %li Вес: #{@item.weight} кг.
+  %li Картинка:      
+  -if @item.image_url? 
+    =image_tag(@item.image_url, id: 'image-item')
+  -else 
+    =image_tag 'no-image.png', width: '100px', height: '100px'
+  
+   

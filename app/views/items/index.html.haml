@@ -1,0 +1,40 @@
+%section.container
+  %table 
+    %tr
+      %th
+        Id
+      %th
+        Картинка
+      %th
+        Наименование
+      %th
+        Цена
+      %th
+        Рейтинг
+      %th
+        Админ
+    -@items.each do |i| 
+      %tr
+        %td
+          = i.id 
+        %td
+          -if i.image_url? 
+            = image_tag(i.image_url, width: '100px', height: '100px') 
+          -else 
+            = image_tag('no-image.png', width: '100px', height: '100px') 
+          
+        
+        %td
+          =link_to i.name, item_path(i) 
+        %td
+          = i.price 
+        %td
+          = i.votes_count 
+          = link_to "+", upvote_item_path(i) 
+        %td
+          = link_to "Edit", edit_item_path(i) 
+          = link_to "Delete", i, method: :delete, data:{confirm: "Are you sure?" } 
+
+    
+    
+  

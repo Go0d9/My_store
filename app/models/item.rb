@@ -8,7 +8,9 @@ class Item < ActiveRecord::Base
   has_many :carts, through: :positions
   
   has_many :comments, as: :commentable
-  has_many :images, as: :imageable, dependent: :destroy
+  mount_uploader :image, ImageUploader
+  has_many :images, as: :imagestable
+
   
   # has_one :image
   # accepts_nested_attributes_for :image

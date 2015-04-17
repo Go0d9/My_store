@@ -62,7 +62,8 @@
   private
   
     def item_params
-      params.require(:item).permit(:name, :description, :price, :weight, :real, :image_url)
+      params.require(:item).permit(:name, :description, :price, :weight, :image,
+                                   :image_url, :real)
     end
     
     def find_item

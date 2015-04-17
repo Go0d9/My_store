@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416092307) do
+ActiveRecord::Schema.define(version: 20150417091508) do
 
   create_table "blog_posts", force: :cascade do |t|
     t.text     "title"
@@ -35,16 +35,6 @@ ActiveRecord::Schema.define(version: 20150416092307) do
     t.datetime "updated_at",       null: false
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string   "picture"
-    t.integer  "imageable_id"
-    t.string   "imageable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "images", ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
-
   create_table "items", force: :cascade do |t|
     t.float    "price"
     t.string   "name"
@@ -55,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150416092307) do
     t.datetime "updated_at"
     t.integer  "votes_count", default: 0
     t.string   "image_url"
+    t.string   "image"
   end
 
   create_table "orders", force: :cascade do |t|

@@ -18,10 +18,8 @@
         %td
           = i.id 
         %td
-          -if i.image_url? 
-            = image_tag(i.image_url, width: '100px', height: '100px') 
-          -else 
-            = image_tag('no-image.png', width: '100px', height: '100px') 
+          = image_tag(i.image_url(:medium_image)) if i.image? 
+            
           
         
         %td

@@ -1,13 +1,14 @@
-rails %p Название:
-=f.text_field :name 
+%p Название:
+= f.text_field :name
 %p Описание: 
-=f.text_area :description, size: "24x6" 
+= f.text_area  :description
 %p Вес: 
-=f.text_field :weight 
+= f.text_field :weight
 %p Цена:
-=f.text_field :price 
+= f.text_field :price
 %p Картинка:
-/ =f.text_field :image_url 
-/ %p
 = f.file_field :image
+
+
+
 

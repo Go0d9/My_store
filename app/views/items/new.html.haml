@@ -2,5 +2,4 @@
 
 = form_for @item, :html => {:multipart => true} do |f| 
   = render partial: "form", locals: {f: f}
-  %input
-    = f.submit "Создать товар" 
+  = f.submit "Создать товар" 

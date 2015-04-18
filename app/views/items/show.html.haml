@@ -5,7 +5,9 @@
   %li Описание: #{urls_to_links(urls_to_images(@item.description))}
   %li Вес: #{@item.weight} кг.
   %li Картинка: 
-  =image_tag(@item.image)
-    
+  %p
+  =image_tag(@item.image_url(:large_image)) if @item.image?
+= link_to "Edit", edit_item_path(@item)     
+
   
  

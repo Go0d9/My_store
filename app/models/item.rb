@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  
+  attr_accessible :price, :name, :real, :weight, :description, :image_url, :image
   validates :price, numericality: { greater_than: 0, allow_nil: true } 
   validates :name, :description, presence: true
   
@@ -9,7 +9,7 @@ class Item < ActiveRecord::Base
   
   has_many :comments, as: :commentable
   mount_uploader :image, ImageUploader
-  has_many :images, as: :imagestable
+  #has_many :images, as: :imagestable
 
   
   # has_one :image
@@ -17,7 +17,8 @@ class Item < ActiveRecord::Base
   after_initialize {  }
   after_save {  }
   after_create { puts "CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE "  }
-  after_update {  }
+  after_update { puts "Update Update Update Update Update Update Update Update Update Update Update Update " }
   after_destroy {  }
+
 
 end

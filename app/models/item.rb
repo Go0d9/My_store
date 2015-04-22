@@ -11,7 +11,7 @@ class Item < ActiveRecord::Base
   has_many :comments, as: :commentable
   mount_uploader :image, ImageUploader
   #has_many :images, as: :imagestable
-
+  has_and_belongs_to_many :items
   
   # has_one :image
   # accepts_nested_attributes_for :image

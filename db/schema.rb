@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417091508) do
+ActiveRecord::Schema.define(version: 20150422055148) do
 
   create_table "blog_posts", force: :cascade do |t|
     t.text     "title"
@@ -48,10 +48,16 @@ ActiveRecord::Schema.define(version: 20150417091508) do
     t.string   "image"
   end
 
+  create_table "items_orders", id: false, force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "order_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "total"
   end
 
   create_table "positions", force: :cascade do |t|

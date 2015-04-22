@@ -1,0 +1,7 @@
+= form_for @item, :html => {:multipart => true} do |f| 
+  %p
+    %label My Image
+    = image_tag(@item.image_url) if @item.image? 
+    = f.file_field :image 
+    = f.hidden_field :image_cache 
+    = hidden_field_tag 'selected', 'none'

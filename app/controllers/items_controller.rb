@@ -33,6 +33,7 @@
     @item = Item.create(item_params)
     if @item.errors.empty?
       redirect_to item_path(@item)
+      flash[:notice] = "Item successfully created"
     else
       render "new"
     end
@@ -42,15 +43,15 @@
     @item.update_attributes(item_params)
     if @item.errors.empty?
       redirect_to item_path(@item)
-      flash[:success] = "Good job"
+      flash[:notice] = "Item successfully updated"
     else
-      flash[:error] = "Bul sheat"
       render "edit"
     end
   end
   
   def destroy
     @item.destroy
+    flash[:error] = "Item successfully destroyed"
     redirect_to action: "index"
   end  
   

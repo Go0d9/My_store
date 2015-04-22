@@ -1,37 +1,33 @@
-%section.container
-  %table 
+%table.table.table-striped
+  %tr
+    %th
+      Id
+    %th
+      = t('item.image')
+    %th  
+      = t('item.name')
+    %th  
+      = t('item.price')
+    %th  
+      = t('item.votes')
+    %th  
+      = t('item.admin')
+  -@items.each do |i| 
     %tr
-      %th
-        Id
-      %th
-        Картинка
-      %th
-        Наименование
-      %th
-        Цена
-      %th
-        Рейтинг
-      %th
-        Админ
-    -@items.each do |i| 
-      %tr
-        %td
-          = i.id 
-        %td
-          = image_tag(i.image_url(:medium_image)) if i.image? 
-            
-          
-        
-        %td
-          =link_to i.name, item_path(i) 
-        %td
-          = i.price 
-        %td
-          = i.votes_count 
-          = link_to "+", upvote_item_path(i) 
-        %td
-          = link_to "Edit", edit_item_path(i) 
-          = link_to "Delete", i, method: :delete, data:{confirm: "Are you sure?" } 
+      %td
+        = i.id 
+      %td  
+        = image_tag(i.image_url(:medium_image)) if i.image? 
+      %td
+        = link_to i.name, item_path(i) 
+      %td
+        = i.price 
+      %td
+        = i.votes_count 
+        = link_to "+", upvote_item_path(i) 
+      %td
+        = link_to t('button.edit'), edit_item_path(i) 
+        = link_to t('button.delete'), i, method: :delete, data:{confirm: "Are you sure?" } 
 
     
     

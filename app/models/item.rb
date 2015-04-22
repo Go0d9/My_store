@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
-  attr_accessible :price, :name, :real, :weight, :description, :image_url, :image
+  attr_accessible :price, :name, :real, :weight, :description, :image_url,
+                  :image, :image_cach
   validates :price, numericality: { greater_than: 0, allow_nil: true } 
   validates :name, :description, presence: true
   

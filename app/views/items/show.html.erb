@@ -1,0 +1,45 @@
+<div class="container">  
+  <div class="row">
+    <div class="col-sm-2 col-md-4">
+    </div>
+    <div class="col-sm-10 col-md-4">
+      <div class="thumbnail">
+        <%=image_tag(@item.image_url(:large_image)) if @item.image? %>
+        <div class="caption">
+          <h3><%= @item.name %></h3>
+          <p><%= urls_to_links(@item.description) %></p>
+          <strong><%= t('item.weight') %>:
+            <div class="label label-info">
+              <%= @item.weight %> 
+            </div>
+               <%= t('item.kg') %>.
+          </strong>
+          <P>
+            
+          </P>
+          
+            <strong><%= t('item.price') %>: 
+          <% if @item.price < 500 %> 
+              <div class="label label-danger">
+                <%= @item.price %> 
+              </div>
+          <% else %>
+              <div class="label label-success">
+                <%= @item.price %> 
+              </div>
+          <% end %>  
+                <%= t('item.rub') %>.</strong>
+          <div class="buttom-muted" >
+             <p>
+              <%= link_to  t('item.home'), items_path, :class => 'btn btn-primary'%>
+              <%= link_to t('item.edit'), edit_item_path, :class => 'btn btn-success'%>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2 col-md-4">
+    </div>
+  </div>
+</div>
+

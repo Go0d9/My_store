@@ -19,20 +19,20 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+ru:
   item:
-    image: "Image"
-    name: "Name"
-    description: "Description"
-    votes: "Votes"
-    admin: "Admin"
-    weight: "Weight"
-    price: "Price"
-    rub: "rub"
-    kg: "kg"
+    image: "Картинка"
+    name: "Название"
+    description: "Описание"
+    votes: "Рeйтинг"
+    admin: "Админ"
+    weight: "Вес"
+    price: "Цена"
+    rub: "руб"
+    kg: "кг"
   button:
-    edit: "Edit"
-    delete: "Delete"
-    cancel: "Cancel"
-    home: "Home"
-    save: "Save"
+    edit: "Редактировать"
+    delete: "Удалить"
+    cancel: "Назад"
+    home: "Главная"
+    save: "Сохранить"

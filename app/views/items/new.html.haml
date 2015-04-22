@@ -1,5 +1,6 @@
-%h1 Create new item
+%h2
+  %span.label.label-info
+    Create new item
 
 = form_for @item, :html => {:multipart => true} do |f| 
   = render partial: "form", locals: {f: f}
-  = f.submit "Создать товар" 

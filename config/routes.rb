@@ -8,7 +8,6 @@ Rails.application.routes.draw do
       get :exspensive,  on: :collection
     
   end
-  get "admin/users_count" => "admin#users_count"
   get 'persons/profile', as: 'user_root'
   get  "/sign_out", :to => "devise/sessions#destroy "
 end

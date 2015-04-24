@@ -14,7 +14,11 @@
     </h1>
   </div> 
   <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <span>Администратор, <%= current_user.email %></span>
+    <%else%>
       <span>Здравствуйте, <%= current_user.email %></span>
+    <% end %>  
       <%= link_to "Выйти", destroy_user_session_path, method: :delete %>
   <% else %>
       <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>

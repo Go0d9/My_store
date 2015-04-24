@@ -20,7 +20,6 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
 # for aws cloud storage
 gem 'fog'
 # photo resizing
@@ -40,6 +39,7 @@ gem 'pg'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'byebug'
   gem "factory_girl"
   gem 'rspec-rails', '~> 3.0'

@@ -15,11 +15,6 @@ class Item < ActiveRecord::Base
   
   # has_one :image
   # accepts_nested_attributes_for :image
-  after_initialize {  }
-  after_save {  }
-  after_create { puts "CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE CREATE "  }
-  after_update { puts "Update Update Update Update Update Update Update Update Update Update Update Update " }
-  after_destroy {  }
 
 
 end

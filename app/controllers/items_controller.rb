@@ -1,7 +1,7 @@
  class ItemsController < ApplicationController
 
   before_filter :find_item, only: [:show, :edit, :update, :destroy, :upvote]
-  before_filter :check_if_admin, only: [:edit, :update, :destroy, :create, :new]
+ # before_filter :check_if_admin, only: [:edit, :update, :destroy, :create, :new]
 
   def index
     @items = Item
@@ -50,26 +50,18 @@
   end
   
   def destroy
-    @item.destroy
+    @item.delete
     flash[:error] = "Item successfully destroyed"
-    redirect_to action: "index"
+    render json: { success: true }
   end  
   
   def upvote
     @item.increment!(:votes_count)
     redirect_to action: "index"
-  end
-  
+  end 
   private
-  
-    def item_params
-      params.require(:item).permit(:price, :name, :real, :weight, :description, :image_url, :image)
-
-    end
-    
-    def find_item
-      @item = Item.where(id: params[:id]).first
-      render_404 unless @item
-    end
- 
+  def find_item
+    @item = Item.where(id: params[:id]).first
+    render_404 unless @item
+  end
 end

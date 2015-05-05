@@ -7,8 +7,16 @@ class ApplicationController < ActionController::Base
     rescue_from ActiveRecord::RecordNotFound, :with => :render_404   
     rescue_from ActionController::RoutingError, :with => :render_404
   end 
+    def users_count
+      @users_count = User.count
+    end
   private
 
+    def item_params
+      params.require(:item).permit(:price, :name, :real, :weight, :description, 
+                                   :image_url, :image)
+    end
+    
     def render_403
       render file: "public/403.html", status: 403
     end

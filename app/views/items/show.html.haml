@@ -1,0 +1,37 @@
+.container
+  .row    
+    .col-sm-10.col-md-8
+      .thumbnail
+        =image_tag(@item.image_url(:large_image)) if @item.image? 
+        .caption
+          %h3
+            = @item.name 
+          %p
+            = urls_to_links(@item.description)
+          %strong
+            = "#{t('item.weight')}:"
+            .label.label-info
+              = @item.weight 
+            = "#{t('item.kg')} ."
+          %br            
+     
+          %strong
+            = "#{t('item.price')} : "
+            - if @item.price < 500 
+              .label.label-danger
+                = @item.price 
+            - else 
+              .label.label-success
+                = @item.price  
+            = "#{t('item.rub')} ."
+          .buttom-muted
+            %p
+              = link_to  t('item.home'), root_path, :class => 'btn btn-primary'
+              - if current_user && current_user.admin? 
+                = link_to t('item.edit'), edit_item_path, :class => 'btn btn-success'
+            
+            
+    .col-sm-2.col-md-4
+    %h1
+      Comments
+    

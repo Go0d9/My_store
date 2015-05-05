@@ -1,0 +1,20 @@
+-@items.each do |i|
+  %div.media
+    %div.media-left.media-middle
+      = link_to image_tag(i.image_url(:medium_image)), item_path(i) if i.image?
+    %div.media-body
+      %h4.media-heading= i.name
+      = i.description
+      %div.media-footer
+        %strong
+          = t('item.price')
+          - if i.price < 500 
+            %div.label.label-danger
+              = i.price 
+          - else 
+            %div.label.label-success
+              = i.price 
+%p      
+              
+          
+    

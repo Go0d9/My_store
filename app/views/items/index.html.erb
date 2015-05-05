@@ -1,0 +1,21 @@
+<table class="table table-striped">
+  <tr>
+    <th> <%= t('item.image') %></th>
+    <th> <%= t('item.name') %></th>
+    <th> <%= t('item.price') %></th>
+    <th> <%= t('item.votes') %></th>
+    <th> <%= t('item.admin') %></th>
+  </tr>
+  <% @items.each do |i| %>
+    <tr data-item_id="<%= i.id %>">
+      <td><%= image_tag(i.image_url(:medium_image)) if i.image? %></td>
+      <td><%= link_to i.name, item_path(i) %></td>
+      <td><%= i.price %></td>
+      <td><%= i.votes_count %>
+          <%= link_to "+", upvote_item_path(i) %></td>
+      <td>
+        <span class="deleteAction">Удалить</span>
+      </td>
+    </tr>      
+  <% end %>
+</table>  

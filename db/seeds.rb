@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Item = Item.create( name: 'Apple' ,  description: 'Green apple, Antonovka', weight: 1, price: 5)
+Item1 = Item.create( name: 'Apple1' ,  description: 'Green apple, Antonovka', weight: 1, price: 5)
+Item2 = Item.create( name: 'Apple2' ,  description: 'Green apple, Antonovka', weight: 1, price: 5)
+Item3 = Item.create( name: 'Apple3' ,  description: 'Green apple, Antonovka', weight: 1, price: 5)

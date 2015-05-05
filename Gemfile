@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 # for aws cloud storage
 gem 'fog'
+gem 'simple_form'
 # photo resizing
 gem "mini_magick"
 # file upload solution

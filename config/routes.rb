@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root "items#index"
+  root "home#index"
   devise_for :users
   get 'persons/profile'
-
+  get 'admin/users_count'
   resources :items do
       get :upvote, on: :member
       get :exspensive,  on: :collection
